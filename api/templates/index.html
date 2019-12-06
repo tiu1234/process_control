@@ -55,7 +55,7 @@
                 "action": "remote_control",
                 "csrfmiddlewaretoken": "{{ csrf_token }}"
             }
-            $.post("/switch_process/", data, function(data, status){
+            $.post("/switch_process/", JSON.stringify(data), function(data, status){
                 console.log(data);
                 console.log(status);
             });
@@ -65,7 +65,7 @@
                 "action": "deep_pi_car",
                 "csrfmiddlewaretoken": "{{ csrf_token }}"
             }
-            $.post("/switch_process/", data, function(data, status){
+            $.post("/switch_process/", JSON.stringify(data), function(data, status){
                 console.log(data);
                 console.log(status);
             });
