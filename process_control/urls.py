@@ -20,5 +20,5 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('switch_process/', views.switch_process, name='switch_process'),
-    path('home/', views.index, name='index'),
+    path('', views.index, name='index'),
 ]

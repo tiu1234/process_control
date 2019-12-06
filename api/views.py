@@ -8,4 +8,4 @@ def switch_process(request):
     return HttpResponse(json.dumps({"success": True}), content_type="application/json")
 
 def index(request):
-    return render(request, 'index.html', context=context)
+    return render(request, 'index.html', context={"success": 200})
