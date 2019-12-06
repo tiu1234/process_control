@@ -35,8 +35,8 @@
     </nav>
     <div class="container" style="display: flex; align-content:center; height: 500px; justify-content: center;">
         <div style="align-self: center; display: flex; flex-direction: column;">
-            <button type="button" class="btn btn-primary btn-lg" style="margin-bottom: 64px;">Remote Control</button>
-            <button type="button" class="btn btn-secondary btn-lg">DeepPiCar</button>
+            <button id="remote-control" type="button" class="btn btn-primary btn-lg" style="margin-bottom: 64px;">Remote Control</button>
+            <button id="deep-pi-car" type="button" class="btn btn-secondary btn-lg">DeepPiCar</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -48,6 +48,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script>
+        $("#remote-control").click(function(){
+            data = {
+                "action": "remote_control"
+            }
+            $.post("/switch_process/", data, function(data, status){
+                console.log(data);
+                console.log(status);
+            });
+        });
+        $("#deep-pi-car").click(function(){
+            data = {
+                "action": "deep_pi_car"
+            }
+            $.post("/switch_process/", data, function(data, status){
+                console.log(data);
+                console.log(status);
+            });
+        });
+    </script>
 </body>
 
 </html>
