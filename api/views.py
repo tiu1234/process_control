@@ -24,7 +24,7 @@ def switch_process(request):
                 for conns in proc.connections(kind='inet'):
                     if conns.laddr.port == 8000:
                         proc.send_signal(SIGTERM)
-            subprocess.call(['python', '/home/pi/DeepPiCar/driver/code/deep_pi_car.py'])
+            subprocess.call(['python3', '/home/pi/DeepPiCar/driver/code/deep_pi_car.py'])
 
         return HttpResponse(json.dumps({"success": True, "action": data['action']}), content_type="application/json")
 
