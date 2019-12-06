@@ -18,7 +18,7 @@ def switch_process(request):
         if data['action'] == "remote_control":
             os.environ['DJANGO_SETTINGS_MODULE'] = 'remote_control.settings'
             subprocess.call(['python3', '/home/pi/final/SunFounder_PiCar-V/remote_control/manage.py', 'runserver'])
-            # subprocess.call(['/home/pi/ngrok', 'http', '8000', "-subdomain=remote-control"])
+            subprocess.call(['/home/pi/ngrok', 'http', '8000', "-subdomain=remote-control"])
         elif data['action'] == "deep_pi_car":
             for proc in process_iter():
                 for conns in proc.connections(kind='inet'):
