@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+
 import json
 
 import subprocess
@@ -9,6 +11,7 @@ import time
 from psutil import process_iter
 from signal import SIGTERM
 
+@csrf_exempt
 def switch_process(request):
     if request.method == 'POST':
         data = json.loads(request.body)
